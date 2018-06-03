@@ -1,28 +1,75 @@
 /*
- * Create a list that holds all of your cards
+ * Create a list that holds all of your cards - array "deck"
  */
 
+const documentDeck = document.querySelector('.deck');
+
+class Card {
+  constructor(identifier, cardClass) {
+    this.identifier = identifier;
+    this.cardClass = cardClass;
+  }
+}
+const deck = [
+  new Card(1, 'fa-diamond'),
+  new Card(2, 'fa-diamond'),
+  new Card(3, 'fa-bomb'),
+  new Card(4, 'fa-bomb'),
+  new Card(3, 'fa-leaf'),
+  new Card(4, 'fa-leaf'),
+  new Card(3, 'fa-bolt'),
+  new Card(4, 'fa-bolt'),
+  new Card(3, 'fa-cube'),
+  new Card(4, 'fa-cube'),
+  new Card(3, 'fa-bicycle'),
+  new Card(4, 'fa-bicycle'),
+  new Card(3, 'fa-paper-plane-o'),
+  new Card(4, 'fa-paper-plane-o'),
+  new Card(3, 'fa-anchor'),
+  new Card(4, 'fa-anchor'),
+];
+
+function makeDeck() {
+  for (let card of deck) {
+    let li = document.createElement('li');
+    documentDeck.appendChild(li);
+    li.setAttribute('class', 'card show');
+    let icon = document.createElement('i');
+    li.appendChild(icon);
+    icon.setAttribute('class', `fa ${card.cardClass}`);
+  }
+}
+
+$(document).ready(function() {
+  makeDeck();
+});
 
 /*
  * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
+ *   - loop through each card?
  */
+
+
+
+
+
+
+
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+  var currentIndex = array.length,
+    temporaryValue, randomIndex;
 
-    while (currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    }
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
 
-    return array;
+  return array;
 }
 
 
