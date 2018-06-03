@@ -29,14 +29,24 @@ const deck = [
   new Card(4, 'fa-anchor'),
 ];
 
+/*
+ * Display the cards on the page
+ *   - loop through each card?
+ */
+
 function makeDeck() {
   for (let card of deck) {
-    let li = document.createElement('li');
-    documentDeck.appendChild(li);
-    li.setAttribute('class', 'card show');
-    let icon = document.createElement('i');
-    li.appendChild(icon);
-    icon.setAttribute('class', `fa ${card.cardClass}`);
+    let cardElement = document.createElement('li');
+    documentDeck.appendChild(cardElement);
+    cardElement.setAttribute('class', 'card');
+    let iconElement = document.createElement('i');
+    cardElement.appendChild(iconElement);
+    iconElement.setAttribute('class', `fa ${card.cardClass}`);
+
+    cardElement.addEventListener("click", function(event) {
+      event.preventDefault();
+      cardElement.setAttribute('class','card open show');
+    });
   }
 }
 
@@ -44,12 +54,7 @@ $(document).ready(function() {
   makeDeck();
 });
 
-/*
- * Display the cards on the page
- *   - loop through each card?
- */
-
-
+// flip card on click
 
 
 
