@@ -53,7 +53,6 @@ h1 {
   height: 125px;
   width: 125px;
   background: #2e3d49;
-  font-size: 0;
   color: #ffffff;
   border-radius: 8px;
   cursor: pointer;
@@ -65,6 +64,11 @@ h1 {
   transition: all 1s ease-in-out;
 }
 
+.deck .cardImage {
+  height: 100px;
+  width: auto;
+  opacity: 0;
+}
 
 .deck .card.open {
   transform: rotateY(180deg);
@@ -74,14 +78,15 @@ h1 {
   cursor: default;
 }
 
-.deck .card.show {
-  font-size: 33px;
+.show .cardImage {
+  transition: 0.6s;
+  opacity: 1.0;
 }
 
 .deck .card.match {
   cursor: default;
   background: #02ccba;
-  font-size: 33px;
+
 }
 
 /*
