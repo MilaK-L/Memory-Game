@@ -8,6 +8,7 @@ class Card {
   constructor(identifier, cardClass) {
     this.identifier = identifier;
     this.cardClass = cardClass;
+
   }
 }
 const deck = [
@@ -41,7 +42,9 @@ function makeDeck() {
     cardElement.setAttribute('class', 'card');
     let iconElement = document.createElement('i');
     cardElement.appendChild(iconElement);
-    iconElement.setAttribute('class', `fa ${card.cardClass}`);
+    iconElement.setAttribute('class', ` fa ${card.cardClass}`);
+
+
 
     cardElement.addEventListener("click", function(event) {
       event.preventDefault();
