@@ -75,7 +75,7 @@ function checkCardState() {
 
       setTimeout(function() {
       closeAllCards();
-    }, 1000);
+    }, 900);
   }
   console.log("Number of open cards is " + openNumber);
 }
