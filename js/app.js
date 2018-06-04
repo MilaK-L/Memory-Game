@@ -5,30 +5,32 @@
 const documentDeck = document.querySelector('.deck');
 
 class Card {
-  constructor(identifier, cardClass) {
+  constructor(identifier, imageSource) {
     this.identifier = identifier;
-    this.cardClass = cardClass;
+    this.imageSource = imageSource;
+    this.isOpen = false;
 
   }
 }
 const deck = [
-  new Card(1, 'fa-diamond'),
-  new Card(2, 'fa-diamond'),
-  new Card(3, 'fa-bomb'),
-  new Card(4, 'fa-bomb'),
-  new Card(3, 'fa-leaf'),
-  new Card(4, 'fa-leaf'),
-  new Card(3, 'fa-bolt'),
-  new Card(4, 'fa-bolt'),
-  new Card(3, 'fa-cube'),
-  new Card(4, 'fa-cube'),
-  new Card(3, 'fa-bicycle'),
-  new Card(4, 'fa-bicycle'),
-  new Card(3, 'fa-paper-plane-o'),
-  new Card(4, 'fa-paper-plane-o'),
-  new Card(3, 'fa-anchor'),
-  new Card(4, 'fa-anchor'),
+  new Card(1, 'img/svg/fox.svg'),
+  new Card(2, 'img/svg/fox.svg'),
+  new Card(3, 'img/svg/lemur.svg'),
+  new Card(4, 'img/svg/lemur.svg'),
+  new Card(5, 'img/svg/pig.svg'),
+  new Card(6, 'img/svg/pig.svg'),
+  new Card(7, 'img/svg/tiger.svg'),
+  new Card(8, 'img/svg/tiger.svg'),
+  new Card(9, 'img/svg/koala.svg'),
+  new Card(10, 'img/svg/koala.svg'),
+  new Card(11, 'img/svg/bull.svg'),
+  new Card(12, 'img/svg/bull.svg'),
+  new Card(13, 'img/svg/zebra.svg'),
+  new Card(14, 'img/svg/zebra.svg'),
+  new Card(15, 'img/svg/hippopotamus.svg'),
+  new Card(16, 'img/svg/hippopotamus.svg'),
 ];
+
 
 /*
  * Display the cards on the page
@@ -40,15 +42,19 @@ function makeDeck() {
     let cardElement = document.createElement('li');
     documentDeck.appendChild(cardElement);
     cardElement.setAttribute('class', 'card');
-    let iconElement = document.createElement('i');
-    cardElement.appendChild(iconElement);
-    iconElement.setAttribute('class', ` fa ${card.cardClass}`);
+    cardElement.setAttribute('id', card.identifier);
+    let imageElement = document.createElement('img');
+    cardElement.appendChild(imageElement);
+    imageElement.setAttribute('class', 'cardImage');
+    imageElement.setAttribute('src', card.imageSource);
 
 
-
+    // flip card on click
     cardElement.addEventListener("click", function(event) {
       event.preventDefault();
-      cardElement.setAttribute('class','card open show');
+      cardElement.setAttribute('class', 'card open show');
+      card.isOpen = true;
+      checkCardState();
     });
   }
 }
@@ -57,10 +63,33 @@ $(document).ready(function() {
   makeDeck();
 });
 
-// flip card on click
+function checkCardState() {
+  let openNumber = 0;
+  for (let card of deck) {
+    if (card.isOpen === true) {
+      openNumber += 1;
+    }
+
+  }
+  if (openNumber > 1) {
+
+      setTimeout(function() {
+      closeAllCards();
+    }, 1000);
+  }
+  console.log("Number of open cards is " + openNumber);
+}
 
 
-
+function closeAllCards() {
+  for (let card of deck) {
+    if (card.isOpen === true) {
+let cardElement = document.getElementById(card.identifier);
+  cardElement.setAttribute('class', 'card');
+  card.isOpen = false;
+    }
+  }
+}
 
 
 
