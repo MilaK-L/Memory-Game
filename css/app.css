@@ -14,7 +14,7 @@ html, body {
 }
 
 body {
-  background: url('../img/46187-O4WJHV.jpg');
+  background: url('../img/99537-OLIFGW-509.jpg');
   background-size: cover;
   /* Background pattern from Subtle Patterns */
   font-family: 'Coda', cursive;
@@ -39,7 +39,8 @@ h1 {
 .deck {
   width: 660px;
   min-height: 680px;
-  background: linear-gradient(160deg, #d39d38 0%, #4da0b0 100%);
+  /*background: linear-gradient(160deg, #96c93d 0%, #4ca2cd 100%);*/
+  background: linear-gradient(160deg, rgba(0, 176, 155, 0.7) 0%, rgba(150, 201, 61, 0.7) 100%);
   padding: 32px;
   border-radius: 10px;
   box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);

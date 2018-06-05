@@ -9,6 +9,7 @@ class Card {
     this.identifier = identifier;
     this.imageSource = imageSource;
     this.isOpen = false;
+    this.isMatch = false;
 
   }
 }
@@ -65,15 +66,18 @@ $(document).ready(function() {
 
 function checkCardState() {
   let openNumber = 0;
+  let openOnDeck = [];
   for (let card of deck) {
-    if (card.isOpen === true) {
+    if (card.isOpen === true && card.isMatch === false) {
       openNumber += 1;
+      openOnDeck.push(card)
     }
 
   }
   if (openNumber > 1) {
+   isMatched(openOnDeck[0], openOnDeck[1]);
 
-      setTimeout(function() {
+    setTimeout(function() {
       closeAllCards();
     }, 900);
   }
@@ -83,14 +87,27 @@ function checkCardState() {
 
 function closeAllCards() {
   for (let card of deck) {
-    if (card.isOpen === true) {
-let cardElement = document.getElementById(card.identifier);
-  cardElement.setAttribute('class', 'card');
-  card.isOpen = false;
+    if (card.isOpen === true && card.isMatch === false) {
+      let cardElement = document.getElementById(card.identifier);
+      cardElement.setAttribute('class', 'card');
+      card.isOpen = false;
     }
   }
 }
 
+
+function isMatched(a, b) {
+  if (a.imageSource === b.imageSource) {
+    let firstCard = document.getElementById(a.identifier);
+    let secondCard = document.getElementById(b.identifier);
+    firstCard.setAttribute('class', 'card show match');
+    secondCard.setAttribute('class', 'card show match');
+    a.isMatch = true;
+    b.isMatch = true;
+
+  }
+
+}
 
 
 // Shuffle function from http://stackoverflow.com/a/2450976
