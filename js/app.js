@@ -61,6 +61,7 @@ function makeDeck() {
 }
 
 $(document).ready(function() {
+  shuffle(deck);
   makeDeck();
 });
 
@@ -75,7 +76,7 @@ function checkCardState() {
 
   }
   if (openNumber > 1) {
-   isMatched(openOnDeck[0], openOnDeck[1]);
+    isMatched(openOnDeck[0], openOnDeck[1]);
 
     setTimeout(function() {
       closeAllCards();
