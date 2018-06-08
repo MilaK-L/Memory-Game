@@ -61,7 +61,7 @@ function makeDeck() {
 }
 
 $(document).ready(function() {
-  shuffle(deck);
+  //shuffle(deck);
   makeDeck();
 });
 
@@ -72,15 +72,23 @@ function checkCardState() {
     if (card.isOpen === true && card.isMatch === false) {
       openNumber += 1;
       openOnDeck.push(card)
+    } else if (card.isOpen === true && card.isMatch === true) {
+      openNumber += 1;
+
     }
 
   }
-  if (openNumber > 1) {
+  if (openOnDeck.length > 1) {
     isMatched(openOnDeck[0], openOnDeck[1]);
 
     setTimeout(function() {
       closeAllCards();
     }, 900);
+  }
+
+  if (openNumber === deck.length) {
+    gameOver();
+    console.log("The End");
   }
   console.log("Number of open cards is " + openNumber);
 }
@@ -109,6 +117,23 @@ function isMatched(a, b) {
   }
 
 }
+
+const modal = document.getElementById('gameOverModal');
+const span = document.getElementsByClassName("close")[0];
+
+function gameOver() {
+  modal.style.display = "block";
+
+}
+span.onclick = function() {
+  modal.style.display = "none";
+};
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
 
 
 // Shuffle function from http://stackoverflow.com/a/2450976
