@@ -13,32 +13,38 @@ class Card {
 
   }
 }
-const deck = [
-  new Card(1, 'img/svg/fox.svg'),
-  new Card(2, 'img/svg/fox.svg'),
-  new Card(3, 'img/svg/lemur.svg'),
-  new Card(4, 'img/svg/lemur.svg'),
-  new Card(5, 'img/svg/pig.svg'),
-  new Card(6, 'img/svg/pig.svg'),
-  new Card(7, 'img/svg/tiger.svg'),
-  new Card(8, 'img/svg/tiger.svg'),
-  new Card(9, 'img/svg/koala.svg'),
-  new Card(10, 'img/svg/koala.svg'),
-  new Card(11, 'img/svg/bull.svg'),
-  new Card(12, 'img/svg/bull.svg'),
-  new Card(13, 'img/svg/zebra.svg'),
-  new Card(14, 'img/svg/zebra.svg'),
-  new Card(15, 'img/svg/hippopotamus.svg'),
-  new Card(16, 'img/svg/hippopotamus.svg'),
-];
 
+let deck = [];
+
+
+function makeNewDeck() {
+  deck = [
+    new Card(1, 'img/svg/fox.svg'),
+    new Card(2, 'img/svg/fox.svg'),
+    new Card(3, 'img/svg/lemur.svg'),
+    new Card(4, 'img/svg/lemur.svg'),
+    new Card(5, 'img/svg/pig.svg'),
+    new Card(6, 'img/svg/pig.svg'),
+    new Card(7, 'img/svg/tiger.svg'),
+    new Card(8, 'img/svg/tiger.svg'),
+    new Card(9, 'img/svg/koala.svg'),
+    new Card(10, 'img/svg/koala.svg'),
+    new Card(11, 'img/svg/bull.svg'),
+    new Card(12, 'img/svg/bull.svg'),
+    new Card(13, 'img/svg/zebra.svg'),
+    new Card(14, 'img/svg/zebra.svg'),
+    new Card(15, 'img/svg/hippopotamus.svg'),
+    new Card(16, 'img/svg/hippopotamus.svg'),
+  ];
+}
 
 /*
  * Display the cards on the page
  *   - loop through each card?
  */
 
-function makeDeck() {
+function displayDeck() {
+  $('.deck').empty();
   for (let card of deck) {
     let cardElement = document.createElement('li');
     documentDeck.appendChild(cardElement);
@@ -61,8 +67,7 @@ function makeDeck() {
 }
 
 $(document).ready(function() {
-  //shuffle(deck);
-  makeDeck();
+  restartGame();
 });
 
 function checkCardState() {
@@ -138,6 +143,9 @@ window.onclick = function(event) {
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
+
+  console.log(array);
+
   var currentIndex = array.length,
     temporaryValue, randomIndex;
 
@@ -152,7 +160,21 @@ function shuffle(array) {
   return array;
 }
 
+// Restart game
 
+const restart = document.querySelector(".restart");
+
+function restartGame() {
+  makeNewDeck();
+  //shuffle(deck);
+  displayDeck();
+  console.log("Fresh start");
+}
+
+
+restart.onclick = function() {
+  restartGame();
+}
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
