@@ -59,6 +59,7 @@ function displayDeck() {
     // flip card on click
     cardElement.addEventListener("click", function(event) {
       event.preventDefault();
+      timer.start();
       cardElement.setAttribute('class', 'card open show');
       card.isOpen = true;
       checkCardState();
@@ -68,6 +69,7 @@ function displayDeck() {
 
 $(document).ready(function() {
   restartGame();
+  timer.stop();
 });
 
 function checkCardState() {
@@ -127,6 +129,7 @@ const modal = document.getElementById('gameOverModal');
 const span = document.getElementsByClassName("close")[0];
 
 function gameOver() {
+  timer.stop();
   modal.style.display = "block";
 
 }
@@ -166,8 +169,10 @@ const restart = document.querySelector(".restart");
 
 function restartGame() {
   makeNewDeck();
+  timer.reset();
   //shuffle(deck);
   displayDeck();
+
   console.log("Fresh start");
 }
 
@@ -178,10 +183,10 @@ restart.onclick = function() {
 
 //Timer
 var timer = new Timer();
-timer.start();
+
 timer.addEventListener('secondsUpdated', function (e) {
     $('#gameTimer').html(timer.getTimeValues().toString());
-}); 
+});
 
 
 
