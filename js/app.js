@@ -60,9 +60,11 @@ function displayDeck() {
     cardElement.addEventListener("click", function(event) {
       event.preventDefault();
       timer.start();
+      moves++;
       cardElement.setAttribute('class', 'card open show');
       card.isOpen = true;
       checkCardState();
+      showCounter();
     });
   }
 }
@@ -92,6 +94,7 @@ function checkCardState() {
       closeAllCards();
     }, 900);
   }
+
 
   if (openNumber === deck.length) {
     gameOver();
@@ -170,6 +173,9 @@ const restart = document.querySelector(".restart");
 function restartGame() {
   makeNewDeck();
   timer.reset();
+  timer.stop();
+  moves = 0;
+  showCounter();
   //shuffle(deck);
   displayDeck();
 
@@ -181,11 +187,31 @@ restart.onclick = function() {
   restartGame();
 }
 
-//Timer
-var timer = new Timer();
+// Moves counter
 
-timer.addEventListener('secondsUpdated', function (e) {
-    $('#gameTimer').html(timer.getTimeValues().toString());
+let moves = 0;
+let counter = document.querySelector(".moves");
+
+function showCounter() {
+  counter.innerHTML = parseInt(moves / 2);
+
+  // Star rating
+  if (moves / 2 <= ((deck.length / 2) + 2)) {
+    $(".stars").find(".fa-star").css("color", "yellow");
+    console.log("Should be 3 stars");
+  } else if (moves / 2 <= ((deck.length / 2) + 5)) {
+    $(".stars").find(".third ").css("color", "black");
+    console.log("Should be 2 stars");
+  } else {
+    $(".stars").find(".second ").css("color", "black");
+    console.log("Should be 1 star");
+
+  }
+}
+//Timer
+let timer = new Timer();
+timer.addEventListener('secondsUpdated', function(e) {
+  $('#gameTimer').html(timer.getTimeValues().toString());
 });
 
 
