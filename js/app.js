@@ -175,6 +175,16 @@ function restartGame() {
 restart.onclick = function() {
   restartGame();
 }
+
+//Timer
+var timer = new Timer();
+timer.start();
+timer.addEventListener('secondsUpdated', function (e) {
+    $('#gameTimer').html(timer.getTimeValues().toString());
+}); 
+
+
+
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
