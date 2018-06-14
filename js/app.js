@@ -132,10 +132,30 @@ const modal = document.getElementById('gameOverModal');
 const span = document.getElementsByClassName("close")[0];
 
 function gameOver() {
-  timer.stop();
-  modal.style.display = "block";
+  let starRating = getRating();
+  if (starRating === 3) {
+    $(".finalRating").find(".fa-star").css("color", "yellow");
+    console.log("Should be 3 stars");
+  } else if (starRating === 2) {
+    $(".finalRating").find(".third ").css("color", "black");
+    console.log("Should be 2 stars");
+  } else {
+    $(".finalRating").find(".second ").css("color", "black");
+    console.log("Should be 1 star");
 
+  }
+
+  $('#totalTime .hours').html(timer.getTimeValues().hours);
+  $('#totalTime .minutes').html(timer.getTimeValues().minutes);
+  $('#totalTime .seconds').html(timer.getTimeValues().seconds);
+  $('.totalMoves').html(parseInt(moves / 2));
+
+  modal.style.display = "block";
+  console.log("Timer says " + timer.getTimeValues());
+
+  timer.stop();
 }
+
 span.onclick = function() {
   modal.style.display = "none";
 };
@@ -194,12 +214,12 @@ let counter = document.querySelector(".moves");
 
 function showCounter() {
   counter.innerHTML = parseInt(moves / 2);
-
+  let starRating = getRating();
   // Star rating
-  if (moves / 2 <= ((deck.length / 2) + 2)) {
+  if (starRating === 3) {
     $(".stars").find(".fa-star").css("color", "yellow");
     console.log("Should be 3 stars");
-  } else if (moves / 2 <= ((deck.length / 2) + 5)) {
+  } else if (starRating === 2) {
     $(".stars").find(".third ").css("color", "black");
     console.log("Should be 2 stars");
   } else {
@@ -208,6 +228,19 @@ function showCounter() {
 
   }
 }
+
+function getRating() {
+  if (moves / 2 <= ((deck.length / 2) + 2)) {
+    return 3;
+  } else if (moves / 2 <= ((deck.length / 2) + 5)) {
+    return 2;
+  } else {
+    return 1;
+
+  }
+
+}
+
 //Timer
 let timer = new Timer();
 timer.addEventListener('secondsUpdated', function(e) {
