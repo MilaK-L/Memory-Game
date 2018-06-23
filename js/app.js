@@ -1,3 +1,6 @@
+/*Memory Game by Mila K-L */
+/*May 2018*/
+
 /*
  * Create a list that holds all of your cards - array "deck"
  */
