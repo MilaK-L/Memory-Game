@@ -2,7 +2,7 @@
 /*May 2018*/
 
 /*
- * Create a list that holds all of your cards - array "deck"
+ * Creating a list that holds all cards - array "deck"
  */
 
 const documentDeck = document.querySelector('.deck');
@@ -18,7 +18,6 @@ class Card {
 }
 
 let deck = [];
-
 
 function makeNewDeck() {
   deck = [
@@ -43,7 +42,6 @@ function makeNewDeck() {
 
 /*
  * Display the cards on the page
- *   - loop through each card?
  */
 
 function displayDeck() {
@@ -131,6 +129,7 @@ function isMatched(a, b) {
 
 }
 
+//Finish of the game
 const modal = document.getElementById('gameOverModal');
 const span = document.getElementsByClassName("close")[0];
 
@@ -190,8 +189,8 @@ function shuffle(array) {
 }
 
 // Restart game
-
 const restart = document.querySelector(".restart");
+const playAgain = document.querySelector("button");
 
 function restartGame() {
   makeNewDeck();
@@ -205,13 +204,18 @@ function restartGame() {
   console.log("Fresh start");
 }
 
-
 restart.onclick = function() {
   restartGame();
 }
 
-// Moves counter
+playAgain.onclick = function() {
+  modal.style.display = "none";
+  restartGame();
+  console.log("I wanna play again!");
+}
 
+
+// Moves counter
 let moves = 0;
 let counter = document.querySelector(".moves");
 
