@@ -1,19 +1,101 @@
 /*Memory Game by Mila K-L */
+
 /*May 2018*/
 
 /*Breakpoints*/
 
-@media screen and (max-width: 980px) {
-
+@media screen and (min-width: 2680px) {
+  h1 {
+    font-size: 45px;
+  }
+  .deck {
+    width: 960px;
+    min-height: 980px;
+    padding: 38px;
+    margin: 2em 3em;
+  }
+  .deck .card {
+    height: 200px;
+    width: 200px;
+  }
+  .deck .cardImage {
+    height: 150px;
+    width: auto;
+  }
+  .score-panel {
+    width: 545px;
+    font-size: 32px;
+  }
+  .finalRating {
+    font-size: 42px;
+  }
+  .modal-content {
+    border: 2px solid #888;
+    width: 48%;
+    font-size: 36px;
+  }
+  .close {
+    font-size: 46px;
+    font-weight: bold;
+  }
+  button {
+    margin: 45px;
+    width: 275px;
+    height: 90px;
+  }
 }
 
+@media screen and (max-width: 1920px) {
+  h1 {
+    font-size: 42px;
+  }
+  .modal-content {
+    width: 60%;
+}
+
+@media screen and (max-width: 980px) {
+  .modal-content {
+    width: 80%;
+}
+.score-panel {
+  width: 345px;
+  font-size: 22px;
+}
+}
 
 @media screen and (max-width: 736px) {
+  .deck {
+    width: 580px;
+    min-height: 600px;
+    padding: 22px;
+    margin: 0 0 2em;
+  }
+  .deck .card {
+    height: 120px;
+    width: 120px;
+  }
+
+  .modal-content {
+    width: 90%;
 
 }
 
-
 @media screen and (max-width: 480px) {
-
+  .deck {
+    width: 420px;
+    min-height: 410px;
+    padding: 14px;
+    margin: 0 0 2em;
+  }
+  .deck .card {
+    height: 90px;
+    width: 90px;
+  }
+  .deck .cardImage {
+    height: 80px;
+    width: auto;
+  }
+  .modal-content {
+    width: 90%;
 
 }

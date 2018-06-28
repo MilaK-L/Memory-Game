@@ -138,8 +138,8 @@ h1 {
 .deck .card.match {
   cursor: default;
   background: #02ccba;
-  /*transition: transform .2s;*/
-  /*animation: zoom-in-out 500ms 400ms linear 1 alternate;*/
+  transition: transform .2s;
+  animation: zoom-in-out 500ms 400ms linear 1 alternate;
 }
 
 /*
@@ -208,7 +208,7 @@ h1 {
   padding: 20px;
   border: 1px solid #888;
   border-radius: 8px;
-  width: 60%;
+  width: 45%;
   text-align: center;
   font-size: 28px;
   -webkit-animation-name: animatetop;
@@ -243,6 +243,7 @@ h1 {
   color: #aaa;
   float: right;
   font-weight: bold;
+
 }
 
 .close:hover, .close:focus {
@@ -267,6 +268,7 @@ button {
   cursor: pointer;
 }
 
-button:focus {
+button:focus, button:hover {
   outline: none;
+  background: linear-gradient(160deg, rgba(150, 201, 61, 0.7) 0%, rgba(0, 176, 155, 0.7) 100%);
 }
