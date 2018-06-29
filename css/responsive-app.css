@@ -6,13 +6,13 @@
 
 @media screen and (min-width: 2680px) {
   h1 {
-    font-size: 45px;
+    font-size: 58px;
   }
   .deck {
     width: 960px;
     min-height: 980px;
     padding: 38px;
-    margin: 2em 3em;
+    margin: 0 0 3em;
   }
   .deck .card {
     height: 200px;
@@ -51,16 +51,17 @@
   }
   .modal-content {
     width: 60%;
+  }
 }
 
 @media screen and (max-width: 980px) {
-  .modal-content {
+ .modal-content {
     width: 80%;
-}
-.score-panel {
-  width: 345px;
-  font-size: 22px;
-}
+  }
+  .score-panel {
+    font-size: 22px;
+    width: 345px;
+  }
 }
 
 @media screen and (max-width: 736px) {
@@ -74,10 +75,9 @@
     height: 120px;
     width: 120px;
   }
-
   .modal-content {
     width: 90%;
-
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -95,7 +95,10 @@
     height: 80px;
     width: auto;
   }
+  h1 {
+    margin-top: 1em;
+  }
   .modal-content {
     width: 90%;
-
+  }
 }

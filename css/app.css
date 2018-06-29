@@ -19,7 +19,7 @@ html, body {
 body {
   background: url('../img/99537-OLIFGW-509.jpg');
   background-size: cover;
-  font-family: 'Coda', cursive;
+  font-family: 'Nunito', sans-serif;
 }
 
 .container {
@@ -35,8 +35,18 @@ section {
 }
 
 h1 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
+  color: #2e3d49;
+  text-shadow: -3px 0 #ffe121, 0 3px #ffe121, 3px 0 #ffe121, 0 -3px #ffe121;
+  font-family: 'Sigmar One', cursive;
+  font-size: 46px;
+  margin-top: 1.5em;
+  margin-bottom: 0;
+  /*font-weight: 300;*/
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 1.5em;
 }
 
 /*
@@ -83,9 +93,9 @@ h1 {
   transform: rotateY(180deg);
   transition: 0.6s;
   transform-style: preserve-3d;
-  background: #02b3e4;
+  background: /* #61D4EF */   #51adcf;
   cursor: default;
-  /*animation: nudge 350ms linear 2 alternate;*/
+  animation: nudge 350ms linear 2 alternate;
 }
 
 .matchedZoom {
@@ -117,7 +127,7 @@ h1 {
   }
 }
 
-/*
+
 @keyframes nudge {
   0%, 100% {
     transform: translate(0, 0);
@@ -128,7 +138,7 @@ h1 {
   80% {
     transform: translate(-7px, 0);
   }
-} */
+}
 
 .show .cardImage {
   transition: 0.6s;
@@ -137,9 +147,10 @@ h1 {
 
 .deck .card.match {
   cursor: default;
-  background: #02ccba;
+  background: /*#88BA23 #9cd628 #6ddabe #6a9c78  */  #4fb783;
   transition: transform .2s;
   animation: zoom-in-out 500ms 400ms linear 1 alternate;
+
 }
 
 /*
@@ -148,7 +159,9 @@ h1 {
 
 .score-panel {
   text-align: left;
-  width: 345px;
+  font-size: 26px;
+  font-weight: 600;
+  width: 420px;
   margin-bottom: 10px;
 }
 
@@ -211,6 +224,7 @@ h1 {
   width: 45%;
   text-align: center;
   font-size: 28px;
+  font-weight: 600;
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
@@ -264,7 +278,7 @@ button {
   box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
   width: 225px;
   height: 70px;
-  font-family: 'Coda', cursive;
+  font-family: 'Nunito', sans-serif;
   cursor: pointer;
 }
 

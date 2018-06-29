@@ -2,7 +2,7 @@
 /*May 2018*/
 
 /*
- * Creating a list that holds all cards - array "deck"
+ * Creating a list that holds all of your cards - array "deck"
  */
 
 const documentDeck = document.querySelector('.deck');
@@ -136,7 +136,7 @@ const span = document.getElementsByClassName("close")[0];
 function gameOver() {
   let starRating = getRating();
   if (starRating === 3) {
-    $(".finalRating").find(".fa-star").css("color", "yellow");
+    $(".finalRating").find(".fa-star").css("color", "#ffe121");
     console.log("Should be 3 stars");
   } else if (starRating === 2) {
     $(".finalRating").find(".third ").css("color", "black");
@@ -224,7 +224,7 @@ function showCounter() {
   let starRating = getRating();
   // Star rating
   if (starRating === 3) {
-    $(".stars").find(".fa-star").css("color", "yellow");
+    $(".stars").find(".fa-star").css("color", "#ffe121");
     console.log("Should be 3 stars");
   } else if (starRating === 2) {
     $(".stars").find(".third ").css("color", "black");
