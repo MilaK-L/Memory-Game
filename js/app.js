@@ -64,6 +64,8 @@ function displayDeck() {
       moves++;
       cardElement.setAttribute('class', 'card open show');
       card.isOpen = true;
+      //setTimeout(checkCardState, 1500);
+      //setTimeout(showCounter, 2000);
       checkCardState();
       showCounter();
     });
@@ -120,8 +122,12 @@ function isMatched(a, b) {
   if (a.imageSource === b.imageSource) {
     let firstCard = document.getElementById(a.identifier);
     let secondCard = document.getElementById(b.identifier);
-    firstCard.setAttribute('class', 'card show match');
-    secondCard.setAttribute('class', 'card show match');
+
+    setTimeout(function() {
+      firstCard.setAttribute('class', 'card show matchedZoom match');
+      secondCard.setAttribute('class', 'card show matchedZoom match');
+    }, 1100);
+
     a.isMatch = true;
     b.isMatch = true;
 
@@ -152,7 +158,9 @@ function gameOver() {
   $('#totalTime .seconds').html(timer.getTimeValues().seconds);
   $('.totalMoves').html(parseInt(moves / 2));
 
-  modal.style.display = "block";
+  setTimeout(function() {
+    modal.style.display = "block";
+  }, 2300);
   console.log("Timer says " + timer.getTimeValues());
 
   timer.stop();

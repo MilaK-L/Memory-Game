@@ -99,11 +99,11 @@ h3 {
   transform-style: preserve-3d;
   background: #51adcf;
   cursor: default;
-  animation: nudge 350ms linear 2 alternate;
+  /*animation: nudge 350ms linear 2 alternate;*/
 }
 
 .matchedZoom {
-  animation: zoom-in-out 500ms 400ms linear 1 alternate;
+  animation: zoom-in-out 500ms linear 0s alternate 1;
 }
 
 @keyframes zoom-in-out {
@@ -145,6 +145,7 @@ h3 {
   }
 }
 */
+
 .show .cardImage {
   transition: 0.6s;
   opacity: 1.0;
@@ -152,9 +153,10 @@ h3 {
 
 .deck .card.match {
   cursor: default;
+  transform: rotateY(180deg);
   background: /*#88BA23 #6a9c78  */  #4fb783;
   transition: transform .2s;
-  animation: zoom-in-out 500ms 400ms linear 1 alternate;
+  /*animation: zoom-in-out 500ms linear 1 alternate;*/
 
 }
 
