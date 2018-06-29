@@ -64,8 +64,6 @@ function displayDeck() {
       moves++;
       cardElement.setAttribute('class', 'card open show');
       card.isOpen = true;
-      //setTimeout(checkCardState, 1500);
-      //setTimeout(showCounter, 2000);
       checkCardState();
       showCounter();
     });
@@ -206,7 +204,7 @@ function restartGame() {
   timer.stop();
   moves = 0;
   showCounter();
-  //shuffle(deck);
+  shuffle(deck);
   displayDeck();
 
   console.log("Fresh start");
