@@ -22,6 +22,11 @@ body {
   font-family: 'Nunito', sans-serif;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -41,7 +46,6 @@ h1 {
   font-size: 46px;
   margin-top: 1.5em;
   margin-bottom: 0;
-  /*font-weight: 300;*/
 }
 
 h3 {
@@ -56,8 +60,8 @@ h3 {
 .deck {
   width: 660px;
   min-height: 680px;
-  /*background: linear-gradient(160deg, #96c93d 0%, #4ca2cd 100%);*/
-  background: linear-gradient(160deg, rgba(0, 176, 155, 0.7) 0%, rgba(150, 201, 61, 0.7) 100%);
+  /*background: linear-gradient(160deg, rgba(0, 176, 155, 0.7) 0%, rgba(150, 201, 61, 0.7) 100%);*/
+  background: linear-gradient(160deg, rgba(79, 183, 131, 0.7) 0%, rgba(81, 173, 207, 0.7) 100%);
   padding: 32px;
   border-radius: 10px;
   box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
@@ -93,7 +97,7 @@ h3 {
   transform: rotateY(180deg);
   transition: 0.6s;
   transform-style: preserve-3d;
-  background: /* #61D4EF */   #51adcf;
+  background: #51adcf;
   cursor: default;
   animation: nudge 350ms linear 2 alternate;
 }
@@ -111,6 +115,7 @@ h3 {
   }
 }
 
+/*
 .unmachedShake {
   animation: nudge .4s linear;
 }
@@ -139,7 +144,7 @@ h3 {
     transform: translate(-7px, 0);
   }
 }
-
+*/
 .show .cardImage {
   transition: 0.6s;
   opacity: 1.0;
@@ -147,7 +152,7 @@ h3 {
 
 .deck .card.match {
   cursor: default;
-  background: /*#88BA23 #9cd628 #6ddabe #6a9c78  */  #4fb783;
+  background: /*#88BA23 #6a9c78  */  #4fb783;
   transition: transform .2s;
   animation: zoom-in-out 500ms 400ms linear 1 alternate;
 
@@ -169,7 +174,7 @@ h3 {
   margin: 0;
   padding: 0;
   display: inline-block;
-  margin: 0 5px 0 0;
+  margin: 0;
 }
 
 .finalRating {
@@ -273,7 +278,7 @@ button {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  background: linear-gradient(160deg, rgba(0, 176, 155, 0.7) 0%, rgba(150, 201, 61, 0.7) 100%);
+  background: linear-gradient(160deg, rgba(79, 183, 131, 0.7) 0%, rgba(81, 173, 207, 0.7) 100%);
   border-radius: 8px;
   box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
   width: 225px;
@@ -284,5 +289,6 @@ button {
 
 button:focus, button:hover {
   outline: none;
-  background: linear-gradient(160deg, rgba(150, 201, 61, 0.7) 0%, rgba(0, 176, 155, 0.7) 100%);
+  background: linear-gradient(160deg, rgba(81, 173, 207, 0.7) 0%, rgba(79, 183, 131, 0.7) 100%);
+  box-shadow: 10px 12px 14px 0 rgba(46, 61, 73, 0.5);
 }

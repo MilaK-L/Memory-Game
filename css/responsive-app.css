@@ -102,3 +102,38 @@
     width: 90%;
   }
 }
+
+@media screen and (max-width: 375px) {
+  .deck {
+    width: 300px;
+    min-height: 310px;
+    padding: 12px;
+    margin: 0 0 2em;
+  }
+  .deck .card {
+    height: 58px;
+    width: 58px;
+  }
+  .deck .cardImage {
+    height: 50px;
+    width: auto;
+  }
+  h1 {
+    font-size: 28px;
+    margin-top: 1em;
+  }
+  .score-panel {
+    font-size: 18px;
+    width: 280px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 20px;
+
+}
