@@ -1,6 +1,10 @@
 /*Memory Game by Mila K-L */
 /*May 2018*/
 
+/*
+ * General styles
+ */
+
 html {
   box-sizing: border-box;
 }
@@ -53,6 +57,20 @@ h3 {
   margin-bottom: 1.5em;
 }
 
+a {
+  -moz-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  text-decoration: none;
+  color: #2e3d49;
+}
+
+a:hover {
+  color: #ffe121 !important;
+  text-decoration: none;
+}
+
 /*
  * Styles for the deck of cards
  */
@@ -60,7 +78,6 @@ h3 {
 .deck {
   width: 660px;
   min-height: 680px;
-  /*background: linear-gradient(160deg, rgba(0, 176, 155, 0.7) 0%, rgba(150, 201, 61, 0.7) 100%);*/
   background: linear-gradient(160deg, rgba(79, 183, 131, 0.7) 0%, rgba(81, 173, 207, 0.7) 100%);
   padding: 32px;
   border-radius: 10px;
@@ -99,7 +116,6 @@ h3 {
   transform-style: preserve-3d;
   background: #51adcf;
   cursor: default;
-  /*animation: nudge 350ms linear 2 alternate;*/
 }
 
 .matchedZoom {
@@ -114,6 +130,10 @@ h3 {
     transform: scale(1.2);
   }
 }
+
+/*
+ * Animation when cards do not match is not completed yet, hence I'm leaving it commented and will work on this later on.
+ */
 
 /*
 .unmachedShake {
@@ -154,9 +174,8 @@ h3 {
 .deck .card.match {
   cursor: default;
   transform: rotateY(180deg);
-  background: /*#88BA23 #6a9c78  */  #4fb783;
+  background: #4fb783;
   transition: transform .2s;
-  /*animation: zoom-in-out 500ms linear 1 alternate;*/
 
 }
 
@@ -202,7 +221,7 @@ h3 {
 }
 
 /*
- * Styles for the end game Modal
+ * Styles for the game end Modal
  */
 
 .modal {
@@ -216,9 +235,8 @@ h3 {
   height: 100%;
   border-radius: 8px;
   overflow: auto;
-  /* Enable scroll if needed */
   background-color: rgba(0, 0, 0, 0.6);
-  /* Black w/ opacity */
+
 }
 
 .modal-content {
@@ -294,3 +312,36 @@ button:focus, button:hover {
   background: linear-gradient(160deg, rgba(81, 173, 207, 0.7) 0%, rgba(79, 183, 131, 0.7) 100%);
   box-shadow: 10px 12px 14px 0 rgba(46, 61, 73, 0.5);
 }
+
+/*
+ * Styles for footer
+ */
+
+#footer {
+    display: inline-block;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    bottom: 0.5em;
+    left: auto;
+    padding: 2em 2em 1.5em 2em;
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+  #footer .icon {
+    margin: 0 0 2em 0;
+    font-size: 1.3em;
+  }
+  #footer .copyright {
+    margin: 0 0 2em 0;
+  }
+  #footer li {
+    display: inline-block;
+    line-height: 1.5em;
+    margin-left: 0.75em;
+    padding-left: 0.75em;
+  }
+  #footer li:first-child {
+    padding-left: 0;
+  }

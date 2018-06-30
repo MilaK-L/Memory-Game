@@ -1,5 +1,4 @@
 /*Memory Game by Mila K-L */
-
 /*May 2018*/
 
 /*Breakpoints*/
@@ -43,6 +42,10 @@
     width: 275px;
     height: 90px;
   }
+  #footer .icon {
+    font-size: 1.5em;
+  }
+
 }
 
 @media screen and (max-width: 1920px) {
@@ -101,6 +104,9 @@
   .modal-content {
     width: 90%;
   }
+  #footer .icon {
+    font-size: 1em;
+  }
 }
 
 @media screen and (max-width: 375px) {
@@ -136,4 +142,5 @@
     z-index: 1;
     padding-top: 20px;
 
+}
 }

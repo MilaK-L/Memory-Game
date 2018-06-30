@@ -2,7 +2,7 @@
 /*May 2018*/
 
 /*
- * Creating a list that holds all of your cards - array "deck"
+ * Creating a list that holds all cards - array "deck"
  */
 
 const documentDeck = document.querySelector('.deck');
@@ -99,9 +99,7 @@ function checkCardState() {
 
   if (openNumber === deck.length) {
     gameOver();
-    console.log("The End");
   }
-  console.log("Number of open cards is " + openNumber);
 }
 
 
@@ -130,7 +128,6 @@ function isMatched(a, b) {
     b.isMatch = true;
 
   }
-
 }
 
 //Finish of the game
@@ -141,13 +138,13 @@ function gameOver() {
   let starRating = getRating();
   if (starRating === 3) {
     $(".finalRating").find(".fa-star").css("color", "#ffe121");
-    console.log("Should be 3 stars");
+
   } else if (starRating === 2) {
     $(".finalRating").find(".third ").css("color", "black");
-    console.log("Should be 2 stars");
+
   } else {
     $(".finalRating").find(".second ").css("color", "black");
-    console.log("Should be 1 star");
+
 
   }
 
@@ -206,8 +203,6 @@ function restartGame() {
   showCounter();
   shuffle(deck);
   displayDeck();
-
-  console.log("Fresh start");
 }
 
 restart.onclick = function() {
@@ -217,7 +212,6 @@ restart.onclick = function() {
 playAgain.onclick = function() {
   modal.style.display = "none";
   restartGame();
-  console.log("I wanna play again!");
 }
 
 
@@ -231,13 +225,12 @@ function showCounter() {
   // Star rating
   if (starRating === 3) {
     $(".stars").find(".fa-star").css("color", "#ffe121");
-    console.log("Should be 3 stars");
+
   } else if (starRating === 2) {
     $(".stars").find(".third ").css("color", "black");
-    console.log("Should be 2 stars");
+
   } else {
     $(".stars").find(".second ").css("color", "black");
-    console.log("Should be 1 star");
 
   }
 }
@@ -259,16 +252,3 @@ let timer = new Timer();
 timer.addEventListener('secondsUpdated', function(e) {
   $('#gameTimer').html(timer.getTimeValues().toString());
 });
-
-
-
-/*
- * set up the event listener for a card. If a card is clicked:
- *  - display the card's symbol (put this functionality in another function that you call from this one)
- *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
- *  - if the list already has another card, check to see if the two cards match
- *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
- *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
- *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
- *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
- */
