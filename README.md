@@ -1,20 +1,13 @@
 # Memory Game Project
 
-## Table of Contents
+## About
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+A web browser-based card matching game, done within Udacity Nanodegree course.
+Live demo is [here](https://milak-l.github.io/Memory-Game/)
 
-## Instructions
+## How The Game Works
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+The game board consists of sixteen randomly arranged “cards” - eight different pairs - placed face down. Flip over two hidden cards at a time to locate the ones that match! Game ends when all cards are revealed and matched. Have Fun!
 
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+### Known issues:
+Animation when two open cards do not match doesn't work properly yet, and needs to be tweaked.
