@@ -60,6 +60,9 @@ function displayDeck() {
     // flip card on click
     cardElement.addEventListener("click", function(event) {
       event.preventDefault();
+      if (card.isOpen === true) {
+        return;
+      }
       timer.start();
       moves++;
       cardElement.setAttribute('class', 'card open show');

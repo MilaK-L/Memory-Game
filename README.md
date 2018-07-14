@@ -13,6 +13,10 @@ The game board consists of sixteen randomly arranged “cards” - eight differe
 Animals icons designed by [Freepik](https://www.freepik.com/) from www.flaticon.com
 Background image made by [Freepik](https://www.freepik.com/)
 
+### Dependencies:
+External libraries used to build this project include:
+jQuery, Bootstrap, icons from Font Awesome, EasyTimer for timer functionality. 
+
 ### Known issues:
 - Animation when two open cards do not match doesn't work properly yet, and needs to be tweaked.
 - User can click and open more then 2 cards at a time.
