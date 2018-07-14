@@ -202,6 +202,7 @@ function restartGame() {
   makeNewDeck();
   timer.reset();
   timer.stop();
+  $('#gameTimer').html(timer.getTimeValues().toString());
   moves = 0;
   showCounter();
   shuffle(deck);
